@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog - ZONDOGA Prestige Modeste | Développeur Laravel, React, Flutter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Blog de ZONDOGA Prestige Modeste, développeur web et mobile spécialisé Laravel, React.js, Flutter et React Native. Découvrez mes conseils, tutoriels et retours d'expérience sur le développement d'applications performantes.">
+    <meta name="keywords"
+        content="ZONDOGA Prestige Modeste, développeur, Laravel, React.js, Flutter, React Native, blog, développement web, développement mobile, portfolio, conseils, tutoriels">
+    <link href="{{ asset('css/vendors/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <script defer data-domain='zondoga.com' src='https://plausible.cruip.com/js/script.js'></script>
+</head>
+
+<body class="cr6se czysb c3r2t cgvbq cykgn" style="padding-top: 40px;">
+    <!-- Page wrapper -->
+    <div class="c2lr4 czijd cc4ig cgoqt csvh0">
+        <!-- Site header -->
+        @php
+            $currentRoute = Route::currentRouteName();
+        @endphp
+        <header class="cwcbg cuwvd cyple cjlrp" style="position: fixed; top: 0; width: 100%; z-index: 999;">
+            <div class="cnr4s c1b3v c1nzj cg7lc">
+                <div
+                    class="cz81t cdoke cthjc cjblw cu25a cc0ec cog93 cu3wb cmeda c100v crbqt c5f6v chdkf cqput cpodb c5cms cfh7o cklw9 c25pz csvh0 cqqyb ckale">
+                    <!-- Site branding -->
+                    <div class="cpodb cmeq7 csvh0">
+                        <!-- Logo -->
+                        <a class="c4sxq cynlw" href="{{ route('home') }}"
+                            aria-label="ZONDOGA Prestige Modeste - Développeur Web & Mobile">
+                            <img src="{{ asset('images/logo.png') }}" width="32" height="32"
+                                alt="ZONDOGA Prestige Modeste - Développeur Web & Mobile">
+                        </a>
+                    </div>
+
+                    <!-- Navigation de bureau -->
+                    <nav class="ccfqs ct3aq cqarw">
+                        <!-- Liens du menu -->
+                        <ul class="ch8s0 cpodb c9l4q ckik0 c3e84 c2vzz csvh0 cg1kd">
+                            <li>
+                                <a class="csmp5 cr6se cpodb c4gtl carnu csvh0 ctxiw cpbuy {{ $currentRoute == 'home' ? 'active' : '' }}"
+                                    href="{{ route('home') }}">Accueil</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cr6se cpodb c4gtl carnu csvh0 ctxiw cpbuy {{ $currentRoute == 'about' ? 'active' : '' }}"
+                                    href="{{ route('about') }}">À propos</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cr6se cpodb c4gtl carnu csvh0 ctxiw cpbuy {{ $currentRoute == 'blog' ? 'active' : '' }}"
+                                    href="{{ route('blog') }}">Blog Développement</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cr6se cpodb c4gtl carnu csvh0 ctxiw cpbuy {{ $currentRoute == 'help' ? 'active' : '' }}"
+                                    href="{{ route('help') }}">Centre d’aide</a>
+                            </li>
+
+                            <!-- Menu déroulant -->
+                            <li class="cpodb c5apu cklw9 cmk9e cvyyw csvh0 ckale cpbuy" x-data="{ open: false }"
+                                @mouseenter="open = true" @mouseleave="open = false">
+                                <span class="colhg cfu3d cr6se cpodb c4gtl csvh0" aria-haspopup="true"
+                                    :aria-expanded="open">Ressources</span>
+                                <button class="cynlw c8dqw" :aria-expanded="open" @click.prevent="open = !open">
+                                    <span class="cewyu">Afficher le sous-menu "Ressources"</span>
+                                    <svg class="cp9n2" xmlns="http://www.w3.org/2000/svg" width="10"
+                                        height="6">
+                                        <path d="m1.06.19 3.5 3.5 3.5-3.5 1.061 1.06-4.56 4.56L0 1.25 1.06.19Z"></path>
+                                    </svg>
+                                </button>
+
+                                <!-- Sous-menu -->
+                                <span class="c1wy2 cssij ccakt cjjux">
+                                    <ul class="c2o45 cdoke cthjc cjblw cu25a cc0ec ci31u cu3wb c100v crbqt chdkf cywkc cklw9 cayxp cnh25 csmqv"
+                                        x-show="open" x-transition:enter="c4gtl cs3qe cjyh4"
+                                        x-transition:enter-start="csybr c84ey" x-transition:enter-end="cap0sc3rpv"
+                                        x-transition:leave="c4gtl cs3qe" x-transition:leave-start="cap0s"
+                                        x-transition:leave-end="csybr" x-cloak
+                                        @focusout="await $nextTick();!$el.contains($focus.focused()) && (open = false)">
+                                        <li>
+                                            <a class="csmp5 c3d9y ceu05 cgue9 c3e84 csvh0 ctxiw {{ $currentRoute == 'newsletter' ? 'active' : '' }}"
+                                                href="{{ route('newsletter') }}">Newsletter Tech</a>
+                                        </li>
+                                        <li>
+                                            <a class="csmp5 c3d9y ceu05 cgue9 c3e84 csvh0 ctxiw {{ $currentRoute == 'contact' ? 'active' : '' }}"
+                                                href="{{ route('contact') }}">Contact Développeur</a>
+                                        </li>
+                                        <li>
+                                            <a class="csmp5 c3d9y ceu05 cgue9 c3e84 csvh0 ctxiw {{ $currentRoute == 'blog-post' ? 'active' : '' }}"
+                                                href="{{ route('blog-post') }}">Blog post</a>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Desktop sign in links -->
+                    <ul class="cpodb cjrgi cmeq7 c25pz csvh0">
+                        <li>
+                            <a class="cz81t cdoke cthjc c3wrs cjblw cu25a ctuu0 cc0ec ct5xv cu3wb ckbx6 crbqt chdkf cckl9 ch2pc cqb0q co516 cklw9 c8ttz {{ $currentRoute == 'signin' ? 'active' : '' }}"
+                                href="{{ route('signin') }}">Login</a>
+                        </li>
+                        <li>
+                            <a class="cjfft c3wrs ctuu0 ccs84 cbip1 csjfu ch2pc co516 ceu05 c8ttz {{ $currentRoute == 'signup' ? 'active' : '' }}"
+                                href="{{ route('signup') }}">Register</a>
+                        </li>
+                    </ul>
+
+                    <!-- Mobile menu -->
+                    <div class="c8x0a csvh0" x-data="{ expanded: false }">
+                        <!-- Hamburger button -->
+                        <button class="ch8s0 cr6se cpodb c4sxq c7bf6 c4gtl cvyyw civhv chwqi" aria-controls="mobile-nav"
+                            :aria-expanded="expanded" @click.stop="expanded = !expanded">
+                            <span class="cewyu">Menu</span>
+                            <svg class="cpqz8 clgbu" width="16" height="16" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect class="cv4qb cub3h c0xi6 cqnf4 cujjm c1ff4 cyxa7 cmfcq c1e6a" y="7" width="9"
+                                    height="2" rx="1"></rect>
+                                <rect class="c5pa2 ce2rn cyxa7 cmfcq c1e6a" y="7" width="16" height="2"
+                                    rx="1"></rect>
+                                <rect class="cv4qb c56st cqnf4 crc62 cyxa7 cmfcq c1e6a" y="7" width="9"
+                                    height="2" rx="1"></rect>
+                            </svg>
+                        </button>
+
+                        <!-- Mobile navigation -->
+                        <nav id="mobile-nav"
+                            class="c2o45 cdoke cthjc cjblw cu25a cc0ec ci31u cu3wb c100v crbqt chdkf cywkc cssij ccakt cgy38 cuwvd cg5ut cjlrp"
+                            @click.outside="expanded = false" @keydown.escape.window="expanded = false"
+                            x-show="expanded" x-transition:enter="c4gtl cs3qe ces9d cjyh4"
+                            x-transition:enter-start="csybr c84ey" x-transition:enter-end="cap0sc3rpv"
+                            x-transition:leave="c4gtl cs3qe ces9d" x-transition:leave-start="cap0s"
+                            x-transition:leave-end="csybr" x-cloak="">
+                            <ul class="c3e84 csmqv">
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'home' ? 'active' : '' }}"
+                                        href="{{ route('home') }}">Accueil</a>
+                                </li>
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'about' ? 'active' : '' }}"
+                                        href="{{ route('about') }}">À propos</a>
+                                </li>
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'blog' ? 'active' : '' }}"
+                                        href="{{ route('blog') }}">Blog Développement</a>
+                                </li>
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'help' ? 'active' : '' }}"
+                                        href="{{ route('help') }}">Centre d’aide</a>
+                                </li>
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'newsletter' ? 'active' : '' }}"
+                                        href="{{ route('newsletter') }}">Newsletter Tech</a>
+                                </li>
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'contact' ? 'active' : '' }}"
+                                        href="{{ route('contact') }}">Contact Développeur</a>
+                                </li>
+                                <li>
+                                    <a class="csmp5 c3d9y ceu05 cgue9 csvh0 ctxiw {{ $currentRoute == 'blog-post' ? 'active' : '' }}"
+                                        href="{{ route('blog-post') }}">Blog post</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* Active menu color */
+                .active {
+                    color: #5f5fee !important;
+                }
+            </style>
+            <script>
+                // Active menu auto (desktop & mobile)
+                document.addEventListener('DOMContentLoaded', function() {
+                    var currentUrl = window.location.href;
+                    document.querySelectorAll('nav a, #mobile-nav a').forEach(function(link) {
+                        if (link.href === currentUrl) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            </script>
+        </header>
+
+        <!-- Page content -->
+        <main class="cklw9 cg1kd">
+            <!-- Page illustration -->
+            <div class="cpqz8 ccj7j cbxke cssij cf7dm cossi" aria-hidden="true">
+                <img class="cwchu" src="{{ asset('images/page-illustration.svg') }}" width="846" height="594"
+                    alt="Illustration du blog">
+            </div>
+
+            <!-- Article -->
+            <section>
+                <div class="c1b3v cg7lc">
+                    <div class="cwt1y cegiy">
+                        <!-- Single article -->
+                        <div class="c90dr c1nzj">
+                            <article>
+                                <!-- Post header -->
+                                <header class="cs7a1">
+                                    <h1 class="cfmhn clkfy ca6xa cmgwh cndaf cgrvg cjy9f czenk cm3px c1fmo">
+                                        Stratégie de contenu pour développeur : maximisez votre impact avec Laravel,
+                                        React et Flutter
+                                    </h1>
+                                    <div class="c90dr c1nzj cao5p">
+                                        <p class="cthiu cby5j">
+                                            Découvrez comment bâtir une présence numérique forte en tant que développeur
+                                            spécialisé Laravel, React.js, Flutter et React Native. Conseils, bonnes
+                                            pratiques et retours d'expérience pour booster votre visibilité et votre
+                                            carrière tech.
+                                        </p>
+                                    </div>
+                                    <div class="c62zc cmeda cd1pi cgoqt c25pz csvh0">
+                                        <div class="cpodb c25pz csvh0">
+                                            <img class="c5apu c4sxq cynlw"
+                                                src="{{ asset('images/post-author-05.jpg') }}" width="36"
+                                                height="36" alt="ZONDOGA Prestige Modeste">
+                                            <div class="cr6se c25fq c3e84">
+                                                <span>ZONDOGA Prestige Modeste</span>
+                                                <span class="cqvkd"> - </span>
+                                                <a class="csmp5 cthiu c22pv" href="#0">Développeur Fullstack</a>
+                                            </div>
+                                        </div>
+                                        <ul class="c9l4q cwjad csvh0">
+                                            <li>
+                                                <a class="ct4xh cdoke cthjc cjblw cu25a cc0ec c6aps cu3wb c8ajw crbqt chdkf c5apu c3x59 cklw9 c58zt c1nwx czoeo c8ttz"
+                                                    href="#0">
+                                                    <span class="cjdx7 cmgwh csuc4 ctbdc cgrvg">Développement Web &
+                                                        Mobile</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </header>
+                                <!-- Post image -->
+                                <figure
+                                    class="cq92l cmc9y cv16u czcrr c32hk co553 cu3wb czijd crbqt cni0o cfh7o cqnxs c3hmz cklw9 c5aes cpokh">
+                                    <img class="cr9kh cbkwg" src="{{ asset('images/post-image-01.jpg') }}"
+                                        width="1104" height="576" alt="Développement Laravel React Flutter">
+                                </figure>
+                                <!-- Post content -->
+                                <div
+                                    class="c2gwi cadao c3853 crfh9 c0fti cevly czd5b c2k95 chwut c6rja cbls9 c6khs ceikm cvfyt c662q coych cabdz cpek0 cnyfx ccyjj cfhti c7vyp cr6zf c5yf2 chvd1 cgn7x c1olr ct64l cgzex cnxsj cyo0a cthiu cze76 cbnn1 c4il5 ccs9n cos24 cd7ib cwchu crll1">
+                                    <h2>Pourquoi une stratégie de contenu technique ?</h2>
+                                    <p>
+                                        En tant que développeur Laravel, React.js, Flutter et React Native, il est
+                                        essentiel de partager vos compétences et projets pour attirer des clients et des
+                                        recruteurs. Un blog bien référencé vous permet de démontrer votre expertise,
+                                        d'améliorer votre visibilité sur Google et de valoriser vos réalisations.
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            "Publier régulièrement des articles techniques sur Laravel, React ou Flutter
+                                            augmente votre crédibilité et votre référencement naturel. Les entreprises
+                                            recherchent des développeurs capables de communiquer et de documenter leurs
+                                            solutions."
+                                        </p>
+                                    </blockquote>
+                                    <figure>
+                                        <div
+                                            class="cq92l cmc9y cv16u czcrr c32hk co553 cu3wb czijd crbqt cni0o cfh7o cklw9 c5aes">
+                                            <img class="cr9kh cbkwg cuwvd ci7ul"
+                                                src="{{ asset('images/post-inner-image.jpg') }}" width="768"
+                                                height="432" alt="Blog technique développeur">
+                                        </div>
+                                        <figcaption>Photo par ZONDOGA Prestige Modeste</figcaption>
+                                    </figure>
+                                    <h2>Comment optimiser votre contenu pour le SEO ?</h2>
+                                    <p>
+                                        Utilisez des mots-clés comme "développeur Laravel", "React.js freelance",
+                                        "expert Flutter", "React Native mobile" dans vos titres et paragraphes.
+                                        Structurez vos articles avec des balises <code>&lt;h2&gt;</code> et
+                                        <code>&lt;h3&gt;</code>, ajoutez des images optimisées et partagez vos projets
+                                        GitHub ou vos réalisations concrètes.
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            <strong>Partagez vos projets :</strong>
+                                            Présentez des cas d'usage réels, des applications Laravel, des interfaces
+                                            React.js ou des apps mobiles Flutter/React Native que vous avez développées.
+                                        </li>
+                                        <li>
+                                            <strong>Publiez des tutoriels :</strong>
+                                            Expliquez comment résoudre des problèmes courants, intégrez des exemples de
+                                            code et des astuces pour aider la communauté.
+                                        </li>
+                                        <li>
+                                            <strong>Montrez votre veille technologique :</strong>
+                                            Rédigez sur les nouveautés Laravel, React, Flutter, les bonnes pratiques et
+                                            les tendances du développement web/mobile.
+                                        </li>
+                                    </ol>
+                                    <p>
+                                        Un contenu régulier et pertinent améliore votre positionnement sur les moteurs
+                                        de recherche et attire des opportunités professionnelles.
+                                    </p>
+                                    <h3>Mes frameworks de prédilection</h3>
+                                    <ul>
+                                        <li>
+                                            <strong>Laravel :</strong>
+                                            Développement d'API robustes, applications web sécurisées et performantes.
+                                        </li>
+                                        <li>
+                                            <strong>React.js :</strong>
+                                            Interfaces dynamiques, applications SPA modernes et réactives.
+                                        </li>
+                                        <li>
+                                            <strong>Flutter & React Native :</strong>
+                                            Création d'applications mobiles multiplateformes, UI personnalisées et
+                                            expérience utilisateur optimale.
+                                        </li>
+                                    </ul>
+                                    <h2>Conclusion</h2>
+                                    <p>
+                                        En tant que développeur passionné par Laravel, React.js, Flutter et React
+                                        Native, je partage ici mes conseils, tutoriels et retours d'expérience pour vous
+                                        aider à progresser et à réussir vos projets web et mobiles. N'hésitez pas à me
+                                        contacter pour collaborer ou en savoir plus sur mes réalisations !
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Related articles -->
+                        <div class="cnr4s c1nzj">
+                            <div class="creo4 c90dr c8626 c5c70 c1nzj cgtgy c242q" aria-hidden="true"></div>
+                            <h3 class="cndaf cr6se cnvaz cjy9f c7bf6 cfshg cs7a1">
+                                À lire aussi
+                            </h3>
+                            <div class="cqjw1 c4t1y c5lqd cs8ye cg5mp c1nzj c40o6 cbb52">
+                                <!-- Article #1 -->
+                                <article class="c57u1 cgoqt c1lue csvh0">
+                                    <header>
+                                        <a class="cq92l cmc9y cv16u czcrr c32hk co553 cu3wb czijd crbqt cni0o cfh7o cklw9 c5aes cqxme cvyyw cj64c"
+                                            href="{{ route('blog', 1) }}" tabindex="-1">
+                                            <img class="c7nf0 coqe1 czuk0 csc3n cssbd cr9kh c4gtl cbkwg cs3qe cuwvd"
+                                                src="{{ asset('images/post-thumb-10.jpg') }}" width="347"
+                                                height="220" alt="Article Laravel">
+                                        </a>
+                                        <div class="c7xe2">
+                                            <ul class="c9l4q cwjad csvh0">
+                                                <li>
+                                                    <a class="ct4xh cdoke cthjc cjblw cu25a cc0ec c6aps cu3wb c8ajw crbqt chdkf c5apu c3x59 cklw9 c58zt c1nwx czoeo c8ttz"
+                                                        href="#0">
+                                                        <span class="cjdx7 cmgwh csuc4 ctbdc cgrvg">Laravel</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3 class="cndaf cjy9f cby5j cfxhc">
+                                            <a class="cp9aw cr6se c4gtl" href="{{ route('blog', 1) }}">Développer une
+                                                API RESTful avec Laravel</a>
+                                        </h3>
+                                    </header>
+                                    <footer class="cpodb c25pz csvh0">
+                                        <img class="c5apu c4sxq cynlw" src="{{ asset('images/post-author-05.jpg') }}"
+                                            width="28" height="28" alt="ZONDOGA Prestige Modeste">
+                                        <div class="cr6se c25fq c3e84">
+                                            <span>ZONDOGA Prestige Modeste</span>
+                                            <span class="cqvkd"> - </span>
+                                            <a class="csmp5 cthiu c22pv" href="#0">Développeur Fullstack</a>
+                                        </div>
+                                    </footer>
+                                </article>
+                                <!-- Article #2 -->
+                                <article class="c57u1 cgoqt c1lue csvh0">
+                                    <header>
+                                        <a class="cq92l cmc9y cv16u czcrr c32hk co553 cu3wb czijd crbqt cni0o cfh7o cklw9 c5aes cqxme cvyyw cj64c"
+                                            href="{{ route('blog', 2) }}" tabindex="-1">
+                                            <img class="c7nf0 coqe1 czuk0 csc3n cssbd cr9kh c4gtl cbkwg cs3qe cuwvd"
+                                                src="{{ asset('images/post-thumb-11.jpg') }}" width="347"
+                                                height="220" alt="Article React.js">
+                                        </a>
+                                        <div class="c7xe2">
+                                            <ul class="c9l4q cwjad csvh0">
+                                                <li>
+                                                    <a class="ct4xh cdoke cthjc cjblw cu25a cc0ec c6aps cu3wb c8ajw crbqt chdkf c5apu c3x59 cklw9 c58zt c1nwx czoeo c8ttz"
+                                                        href="#0">
+                                                        <span class="cjdx7 cmgwh csuc4 ctbdc cgrvg">React.js</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3 class="cndaf cjy9f cby5j cfxhc">
+                                            <a class="cp9aw cr6se c4gtl" href="{{ route('blog', 2) }}">Créer une
+                                                interface utilisateur moderne avec React.js</a>
+                                        </h3>
+                                    </header>
+                                    <footer class="cpodb c25pz csvh0">
+                                        <img class="c5apu c4sxq cynlw" src="{{ asset('images/post-author-05.jpg') }}"
+                                            width="28" height="28" alt="ZONDOGA Prestige Modeste">
+                                        <div class="cr6se c25fq c3e84">
+                                            <span>ZONDOGA Prestige Modeste</span>
+                                            <span class="cqvkd"> - </span>
+                                            <a class="csmp5 cthiu c22pv" href="#0">Développeur Fullstack</a>
+                                        </div>
+                                    </footer>
+                                </article>
+                                <!-- Article #3 -->
+                                <article class="c57u1 cgoqt c1lue csvh0">
+                                    <header>
+                                        <a class="cq92l cmc9y cv16u czcrr c32hk co553 cu3wb czijd crbqt cni0o cfh7o cklw9 c5aes cqxme cvyyw cj64c"
+                                            href="{{ route('blog', 3) }}" tabindex="-1">
+                                            <img class="c7nf0 coqe1 czuk0 csc3n cssbd cr9kh c4gtl cbkwg cs3qe cuwvd"
+                                                src="{{ asset('images/post-thumb-12.jpg') }}" width="347"
+                                                height="220" alt="Article Flutter">
+                                        </a>
+                                        <div class="c7xe2">
+                                            <ul class="c9l4q cwjad csvh0">
+                                                <li>
+                                                    <a class="ct4xh cdoke cthjc cjblw cu25a cc0ec c6aps cu3wb c8ajw crbqt chdkf c5apu c3x59 cklw9 c58zt c1nwx czoeo c8ttz"
+                                                        href="#0">
+                                                        <span class="cjdx7 cmgwh csuc4 ctbdc cgrvg">Flutter</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3 class="cndaf cjy9f cby5j cfxhc">
+                                            <a class="cp9aw cr6se c4gtl" href="{{ route('blog', 3) }}">Développer une
+                                                application mobile performante avec Flutter</a>
+                                        </h3>
+                                    </header>
+                                    <footer class="cpodb c25pz csvh0">
+                                        <img class="c5apu c4sxq cynlw" src="{{ asset('images/post-author-05.jpg') }}"
+                                            width="28" height="28" alt="ZONDOGA Prestige Modeste">
+                                        <div class="cr6se c25fq c3e84">
+                                            <span>ZONDOGA Prestige Modeste</span>
+                                            <span class="cqvkd"> - </span>
+                                            <a class="csmp5 cthiu c22pv" href="#0">Développeur Fullstack</a>
+                                        </div>
+                                    </footer>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="czijd cklw9">
+                <div class="cpqz8 cfkn5 cbxke cssij ciqov cah73 cossi cref9" aria-hidden="true">
+                    <img class="cwchu" src="{{ asset('images/blurred-shape.svg') }}" width="760" height="668"
+                        alt="Forme floue">
+                </div>
+
+                <div class="max-w6xl c1b3v c1nzj cg7lc">
+                    <div class="cjdx7 cxfsi ct16x cwt1y cegiy">
+                        <div class="c7bf6 c90dr c1nzj">
+                            <h2 class="cfmhn clkfy ca6xa cmgwh cndaf cgrvg cjy9f czenk cm3px ca3a8">
+                                Discutons de votre projet web ou mobile !
+                            </h2>
+                            <div class="chuol c5lqd czmmv csrpl c1nzj">
+                                <div>
+                                    <a class="cjfft c3wrs ctuu0 ccs84 cbip1 csjfu ch2pc ceu05 cyp9z cujt1 cuwvd cvyyw c3y22 cx2av"
+                                        href="{{ route('contact') }}">
+                                        <span class="cpodb c4sxq cklw9">
+                                            Me contacter
+                                            <span class="c6w8n crzbd cr7x6 c43id czelo">-&gt;</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="cz81t cdoke cthjc c3wrs cjblw cu25a ctuu0 cc0ec ct5xv cu3wb ckbx6 crbqt chdkf cckl9 ch2pc cqb0q cyp9z cklw9 czy5f cuwvd cx2av"
+                                        href="{{ route('portfolio') }}">Voir mon portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Site footer -->
+        <footer>
+            <div class="cnr4s cklw9 c1b3v c1nzj cg7lc">
+                <!-- Footer illustration -->
+                <div class="cpqz8 cfkn5 cbxke cssij ciqov cossi" aria-hidden="true">
+                    <img class="cwchu" src="{{ asset('images/footer-illustration.svg') }}" width="1076"
+                        height="378" alt="Illustration pied de page">
+                </div>
+
+                <div class="c0llo cer17 ct16u cmeda c8k96 crtyx crmoe clnm3 c7ovz cxh4o cbb52 cveph">
+                    <!-- 1st block -->
+                    <div class="cfzyn">
+                        <h3 class="cr6se c25fq c3e84">Compétences</h3>
+                        <ul class="cfzyn c3e84">
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="#0">Laravel</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="#0">React.js</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="#0">Flutter</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="#0">React Native</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2nd block -->
+                    <div class="cfzyn">
+                        <h3 class="cr6se c25fq c3e84">Portfolio</h3>
+                        <ul class="cfzyn c3e84">
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="{{ route('portfolio') }}">Mes réalisations</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="{{ route('about') }}">À propos</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="{{ route('blog') }}">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3rd block -->
+                    <div class="cfzyn">
+                        <h3 class="cr6se c25fq c3e84">Ressources</h3>
+                        <ul class="cfzyn c3e84">
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="{{ route('blog') }}">Articles</a>
+                            </li>
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="#">Mentions légales</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 4th block -->
+                    <div class="cfzyn">
+                        <h3 class="cr6se c25fq c3e84">Contact</h3>
+                        <ul class="cfzyn c3e84">
+                            <li>
+                                <a class="csmp5 cthiu c4gtl" href="{{ route('contact') }}">Me contacter</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 5th block -->
+                    <div class="c6q4h cqmbd ckrcx chvez">
+                        <div class="c7xe2">
+                            <!-- Logo -->
+                            <a class="c4sxq cynlw" href="{{ route('home') }}" aria-label="ZONDOGA Prestige Modeste">
+                                <img src="{{ asset('images/logo.svg') }}" width="32" height="32"
+                                    alt="ZONDOGA Prestige Modeste">
+                            </a>
+                        </div>
+                        <div class="c3e84">
+                            <p class="cthiu c7xe2">
+                                © ZONDOGA Prestige Modeste
+                                <span class="cqvkd">·</span>
+                                <a class="csmp5 cthiu c4gtl" href="#">Mentions légales</a>
+                            </p>
+                            <ul class="c4sxq c6kss">
+                                <li>
+                                    <a class="cd21s c51ou ch8s0 cpodb c4gtl csvh0" href="https://twitter.com/"
+                                        aria-label="Twitter">
+                                        <svg class="clgbu civhv chwqi" viewBox="0 0 32 32"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cd21s c51ou ch8s0 cpodb c4gtl csvh0" href="https://medium.com/"
+                                        aria-label="Medium">
+                                        <svg class="clgbu civhv chwqi" viewBox="0 0 32 32"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cd21s c51ou ch8s0 cpodb c4gtl csvh0" href="https://github.com/"
+                                        aria-label="Github">
+                                        <svg class="clgbu civhv chwqi" viewBox="0 0 32 32"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ asset('js/vendors/alpinejs-focus.min.js') }}"></script>
+    <script src="{{ asset('js/vendors/alpinejs.min.js') }}" defer=""></script>
+    <script src="{{ asset('js/vendors/aos.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
+    <script>
+        console.log("%cBienvenue sur le blog de ZONDOGA Prestige Modeste !", "color: blue; font-size: x-large");
+        console.log(
+            "%cDéveloppeur Laravel, React.js, Flutter, React Native. Retrouvez mes conseils, tutoriels et projets sur ce portfolio.",
+            "font-size: large");
+    </script>
+</body>
+
+</html>
