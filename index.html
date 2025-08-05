@@ -303,20 +303,22 @@
                             <!-- Colonne 1 : Compétences -->
                             <div class="col-12 col-md-6" style="flex:1 1 320px; min-width:300px;">
                                 <h3 class="cfmhn clkfy ca6xa cmgwh cndaf cgrvg cjy9f czenk" style="
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 1px;
-  color: #ffffff;
-  text-shadow: 0 0 6px rgba(255,255,255,0.2);
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  position: relative;
-">
+                                    font-size: 1.8rem;
+                                    font-weight: 700;
+                                    text-align: center;
+                                    letter-spacing: 1px;
+                                    color: #ffffff;
+                                    text-shadow: 0 0 6px rgba(255,255,255,0.2);
+                                    margin-bottom: 2rem;
+                                    padding-bottom: 0.5rem;
+                                    position: relative;
+                                    ">
                                     Mes Compétences
                                 </h3>
 
                                 <style>
+                                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
                                     h3::after {
                                         content: "";
                                         position: absolute;
@@ -345,18 +347,18 @@
                                         }
                                     }
 
-                                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-
                                     .skills-grid {
-                                        display: flex;
-                                        flex-wrap: wrap;
+                                        display: grid;
+                                        grid-template-columns: repeat(2, 1fr);
                                         gap: 1rem;
-                                        justify-content: center;
+                                        justify-items: center;
+                                        font-family: 'Inter', sans-serif;
                                     }
 
                                     .skill-card {
                                         position: relative;
+                                        width: 100%;
+                                        max-width: 230px;
                                         background: rgba(255, 255, 255, 0.05);
                                         backdrop-filter: blur(6px);
                                         border-radius: 12px;
@@ -364,8 +366,6 @@
                                         text-align: center;
                                         transition: transform 0.2s ease;
                                         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                                        flex: 1 1 calc(50% - 1rem);
-                                        max-width: calc(50% - 1rem);
                                         z-index: 0;
                                     }
 
@@ -442,14 +442,6 @@
                                             background-position: 0% 50%;
                                         }
                                     }
-
-                                    /* Responsive mobile */
-                                    @media (max-width: 360px) {
-                                        .skill-card {
-                                            flex: 1 1 100%;
-                                            max-width: 100%;
-                                        }
-                                    }
                                 </style>
 
                                 <div class="skills-grid">
@@ -499,6 +491,7 @@
                                         <span class="badge confirme">Confirmé</span>
                                     </div>
                                 </div>
+
 
                             </div>
                             <!-- Colonne 2 : Expérience/Formation -->
